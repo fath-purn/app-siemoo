@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "new-app-siemoo",
+    "name": "Si-eMOO",
     "slug": "new-app-siemoo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.fathpurn.appsiemoo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "79c1ec99-2e9d-41c8-b8e8-bc753db04463"
+      }
     }
   }
 }
