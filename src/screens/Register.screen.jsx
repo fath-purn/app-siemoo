@@ -11,6 +11,7 @@ import {
   ScrollView,
   StyleSheet,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useState, useContext} from 'react';
@@ -24,6 +25,7 @@ import { AuthContext } from '../../Authorize/AuthProvider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useQuery} from 'react-query';
 import axios from 'axios';
+import { styles } from '../utils/global.utils';
 
 // image
 import HomeLogo from '../../assets/HomeLogo.png';
@@ -178,10 +180,10 @@ export default RegisterInputScreen = ({navigation}) => {
           role: role,
         });
 
-        console.log(response, 'atas')
+        // console.log(response, 'atas')
 
-          navigation.navigate('Login-screen');
-          setLoading(false);
+        navigation.navigate('Login-screen');
+        setLoading(false);
         } catch (error) {
           setModalVisible(true);
           console.log({email: email,
@@ -220,7 +222,7 @@ export default RegisterInputScreen = ({navigation}) => {
           keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : -300} // Mengatur offset berdasarkan platform
         >
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View className=" pt-10 pb-3 flex justify-center items-center">
+            <View className=" pt-10 pb-3 flex justify-center items-center" style={{ flex: 1 }}>
               {/* Image Login Screen */}
               <Image source={HomeLogo} className="h-[70px] w-[90%]" />
               <View className="w-[73%]">
@@ -514,25 +516,3 @@ export default RegisterInputScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  icon: {
-    marginRight: 5,
-  },
-  placeholderStyle: {
-    fontSize: 16,
-    color: '#40513B'
-  },
-  selectedTextStyle: {
-    fontSize: 16,
-    color: '#40513B'
-  },
-  iconStyle: {
-    width: 20,
-    height: 20,
-  },
-  inputSearchStyle: {
-    height: 40,
-    fontSize: 16,
-  },
-});

@@ -26,6 +26,13 @@ import GetStartedTwoScreen from '../src/screens/getStarted/GetStartedTwo.screen'
 import GetStartedThreeScreen from '../src/screens/getStarted/GetStartedThree.screen';
 import GetStartedFourScreen from '../src/screens/getStarted/GetStartedFour.screen';
 
+import AmbilGambarScreen from '../src/screens/DeteksiSakit/AmbilGambar.screen';
+import HasilDeteksiSakitScreen from '../src/screens/DeteksiSakit/HasilDeteksiSakit.screen';
+import KlinikListScreen from '../src/screens/DeteksiSakit/KlinikList.screen';
+import KlinikDeskripsiScreen from '../src/screens/DeteksiSakit/KlinikDeskripsi.screen';
+import RiwayatScreen from '../src/screens/DeteksiSakit/Riwayat.screen';
+import ArtikelScreen from '../src/screens/DeteksiSakit/Artikel.screen';
+
 export default Navigate = () => {
   const {userToken, isLoading} = useContext(AuthContext);
   const isFocused = useIsFocused();
@@ -71,6 +78,30 @@ export default Navigate = () => {
           name="Sakit-screen"
           component={DeteksiSaKitScreen}
         />
+        <Stack.Screen
+          name="AmbilGambar-screen"
+          component={AmbilGambarScreen}
+        />
+        <Stack.Screen
+          name="HasilDeteksiSakit-screen"
+          component={HasilDeteksiSakitScreen}
+        />
+        <Stack.Screen
+          name="KlinikList-screen"
+          component={KlinikListScreen}
+        />
+        <Stack.Screen
+          name="KlinikDeskripsi-screen"
+          component={KlinikDeskripsiScreen}
+        />
+        <Stack.Screen
+          name="Riwayat-screen"
+          component={RiwayatScreen}
+        />
+        <Stack.Screen
+          name="Artikel-screen"
+          component={ArtikelScreen}
+        />
       </Stack.Navigator>
     );
   }
@@ -92,7 +123,7 @@ export default Navigate = () => {
       <Stack.Navigator
         screenOptions={{headerShown: false}}
         initialRouteName="auth">
-        <Stack.Screen
+        {/* <Stack.Screen
           name="GetStartedOneScreen-screen"
           component={GetStartedOneScreen}
           options={{headerShown: false}}
@@ -111,7 +142,7 @@ export default Navigate = () => {
           name="GetStartedFourScreen-screen"
           component={GetStartedFourScreen}
           options={{headerShown: false}}
-        />
+        /> */}
         <Stack.Screen
           name="Login-screen"
           component={Login}
