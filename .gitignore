@@ -7,6 +7,7 @@ node_modules/
 .expo/
 dist/
 web-build/
+si-emoo-f1d76983b844.json
 
 # Native
 *.orig.*
