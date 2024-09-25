@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   TouchableOpacity,
+  Platform,
 } from "react-native";
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -74,11 +75,11 @@ function Home() {
       {modalVisible && <ErrorNotification messageError={messageError} />}
       <KeyboardAvoidingView
         style={{ flex: 1 }}
-        behavior={Platform.OS === "ios" ? "padding" : "position"} // Menghapus behavior pada Android
-        keyboardVerticalOffset={Platform.OS === "ios" ? 100 : -130} // Mengatur offset berdasarkan platform
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} // Menghapus behavior pada Android
+        // keyboardVerticalOffset={Platform.OS === "ios" ? 100 : -130} // Mengatur offset berdasarkan platform
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <View className="bg-[#EDF1D6] w-screen h-screen flex justify-center items-center">
+          <View className="bg-[#EDF1D6] w-screen h-screen flex justify-center items-center" style={{ flex: 1 }}>
             {/* Image Login Screen */}
             <Image source={HomeLogo} className="h-[70px] w-[90%] bottom-[10%]" />
             <View className="w-[73%] ">
